@@ -14,6 +14,7 @@ services:
       - ./parity/node0.network.key:/root/.local/share/io.parity.ethereum/network/key:ro
     ports:
       - 8545:8545
+      - 8181:8180      
     networks:
       app_net:
         ipv4_address: 172.16.0.10
@@ -52,7 +53,7 @@ services:
 
   member0:
     image: parity/parity:${PARITY_VERSION}
-    command: --config /parity/config/member.toml --ui-no-validation ui
+    command: --config /parity/config/member.toml
     volumes:
       - ./parity/config:/parity/config:ro
       - ./parity/keys:/root/.local/share/io.parity.ethereum/keys/${NETWORK_NAME}
