@@ -19,7 +19,7 @@ password = ["/parity/authority.pwd"]
 
 [ui]
 force = true
-interface = "220.230.121.44"
+interface = "0.0.0.0"
 port = 8180
 
 [mining]
