@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   authority0:
-    image: parity/parity:${PARITY_VERSION}
+    build: .
     command:
       --unsafe-expose --config /parity/config/authority.toml --ui-no-validation ui
       --engine-signer 0x00bd138abd70e2f00903268f3db08f2d25677c9e
@@ -21,7 +21,7 @@ services:
 
 
   authority1:
-    image: parity/parity:${PARITY_VERSION}
+    build: .
     command:
       --config /parity/config/authority.toml
       --engine-signer 0x00aa39d30f0d20ff03a22ccfc30b7efbfca597c2
@@ -37,7 +37,7 @@ services:
 
 
   authority2:
-    image: parity/parity:${PARITY_VERSION}
+    build: .
     command:
       --config /parity/config/authority.toml
       --engine-signer 0x002e28950558fbede1a9675cb113f0bd20912019
@@ -52,7 +52,7 @@ services:
         ipv4_address: 172.16.0.12
 
   member0:
-    image: parity/parity:${PARITY_VERSION}
+    build: .
     command:  --unsafe-expose --config /parity/config/member.toml --ui-no-validation ui
     volumes:
       - ./parity/config:/parity/config:ro
@@ -66,7 +66,7 @@ services:
 
 
   member1:
-    image: parity/parity:${PARITY_VERSION}
+    build: .
     command: --config /parity/config/member.toml
     volumes:
       - ./parity/config:/parity/config:ro
@@ -76,7 +76,7 @@ services:
 
 
   member2:
-    image: parity/parity:${PARITY_VERSION}
+    build: .
     command: --config /parity/config/member.toml
     volumes:
       - ./parity/config:/parity/config:ro
@@ -86,7 +86,7 @@ services:
 
 
   monitor:
-    image: buythewhale/ethstats_monitor
+    build: .
     volumes:
       - ./monitor/app.json:/home/ethnetintel/eth-net-intelligence-api/app.json:ro
     networks:
