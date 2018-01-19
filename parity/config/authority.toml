@@ -2,7 +2,7 @@
 chain = "/parity/config/chain.json"
 
 [rpc]
-interface = "220.230.121.44"
+interface = "0.0.0.0"
 cors = "all"
 hosts = ["all"]
 apis = ["web3", "eth", "net", "parity", "traces", "rpc", "personal", "parity_accounts", "signer", "parity_set"]
