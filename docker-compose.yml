@@ -3,7 +3,7 @@ services:
   authority0:
     image: parity/parity:${PARITY_VERSION}
     command:
-      --config /parity/config/authority.toml --ui-no-validation
+      --config /parity/config/authority.toml --unsafe-expose --ui-no-validation
       --engine-signer 0x00bd138abd70e2f00903268f3db08f2d25677c9e
     volumes:
       - ./parity/config:/parity/config:ro
@@ -53,7 +53,7 @@ services:
 
   member0:
     image: parity/parity:${PARITY_VERSION}
-    command: --config /parity/config/member.toml --ui-no-validation
+    command: --config /parity/config/member.toml --unsafe-expose --ui-no-validation
     volumes:
       - ./parity/config:/parity/config:ro
       - ./parity/keys:/root/.local/share/io.parity.ethereum/keys/${NETWORK_NAME}
