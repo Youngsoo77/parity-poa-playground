@@ -2,7 +2,7 @@
 chain = "/parity/config/chain.json"
 
 [rpc]
-interface = "0.0.0.0"
+interface = "220.230.121.44"
 cors = "all"
 hosts = ["all"]
 apis = ["web3", "eth", "net", "parity", "traces", "rpc", "personal", "parity_accounts", "signer", "parity_set"]
@@ -19,7 +19,7 @@ password = ["/parity/authority.pwd"]
 
 [ui]
 force = true
-interface = "0.0.0.0"
+interface = "220.230.121.44"
 port = 8180
 
 [mining]
